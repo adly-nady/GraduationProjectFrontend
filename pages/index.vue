@@ -1,9 +1,16 @@
-<template>  
-  <NuxtLayout class="w-full h-full">
-    <NuxtPage />
-  </NuxtLayout>
-</template>
+<template>
   
+  <div  class="page w-full h-full">
+    <Sidebar></Sidebar>
+
+    <div class="page-wrapper">
+      <Body></Body>
+      <Footer></Footer>
+    </div>
+  </div>
+
+</template>
+
 
 <script setup>
 // import '@/public/dist/css/tabler.min.css';
@@ -11,7 +18,10 @@
 // import '@/public/dist/css/tabler-payments.min.css';
 // import '@/public/dist/css/tabler-vendors.min.css';
 // import '@/public/dist/css/demo.min.css';
-// import Sidebar from './src/Sidebar.vue';
+import Header from './src/Header.vue';
+import Footer from './src/Footer.vue';
+import Body from './src/component/Body.vue';
+import Sidebar from './src/Sidebar.vue';
 console.log(useRuntimeConfig().public.baseURL);
   
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="page-wrapper">
+  <div class="page-wrapper w-full h-full">
     <!-- Page header -->
     <div class="page-header d-print-none">
       <div class="container-xl">

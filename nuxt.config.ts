@@ -1,12 +1,16 @@
 export default defineNuxtConfig({
+  modules: ['nuxt-icon', '@pinia/nuxt', '@nuxtjs/tailwindcss'],
+  tailwindcss: {
+    exposeConfig: true,
+    viewer: true,
+  },
+  css: ['~/assets/css/main.css', '~/assets/css/tailwindcss.css'],
   app: {
     head: {
-      title: 'ERP System', 
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'وصف قصير للمشروع' },
-      ],
+      htmlAttrs: {
+        dir: 'rtl',
+        lang: 'ar'
+      }
     }
   },
   compatibilityDate: '2024-04-03',
@@ -20,13 +24,8 @@ export default defineNuxtConfig({
       score: 50,
     },
   },
+
   plugins: [
-    '~/public/dist/libs/apexcharts/dist/apexcharts.min.js',
-    '~/public/dist/libs/jsvectormap/dist/js/jsvectormap.min.js',
-    '~/public/dist/libs/jsvectormap/dist/maps/world.js',
-    '~/public/dist/libs/jsvectormap/dist/maps/world-merc.js',
-    '~/public/dist/js/tabler.min.js',
-    '~/public/dist/js/demo.min.js',
-    '~/public/dist/js/demo-theme.min.js'
+   
   ],
 })

@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  /* Optionally, target Tabler components explicitly */
+  .tabler {
+    all: revert; /* Restore default browser behavior */
+  }
+}
+
+.navBg{
+  background-color: #4449AB;
+}
+
+.searchSectionHeader{
+  background-color: #D2D0D0;
+}
+
+.searchTableWrapper{
+  height: 196.69px;
+}
+.searchTableWrapper table{
+  height: 100%;
+}
+
+@layer utilities {
+  .tableHeader{
+    background-color:#D2D0D0;
+  }
+  .secitonTitle{
+    width: 381.82px;
+    height: 73.76px;
+    line-height: 73.76px;
+    background-color: #6089B5;
+  }
+.scrollbar-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+}
