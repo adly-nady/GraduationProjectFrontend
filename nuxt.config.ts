@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
-  modules: ['nuxt-icon', '@pinia/nuxt', '@nuxtjs/tailwindcss'],
+  modules: ['nuxt-icon', '@pinia/nuxt','@nuxtjs/tailwindcss'],
+
   tailwindcss: {
     exposeConfig: true,
     viewer: true,
@@ -10,7 +11,13 @@ export default defineNuxtConfig({
       htmlAttrs: {
         dir: 'rtl',
         lang: 'ar'
-      }
+      } ,
+      meta: [
+        {
+          'http-equiv': 'Content-Type',
+          content: 'text/html;charset=UTF-8'
+        },
+      ],
     }
   },
   compatibilityDate: '2024-04-03',

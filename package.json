@@ -12,14 +12,23 @@
   "dependencies": {
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/tailwindcss": "^6.12.2",
+    "@pdf-lib/fontkit": "^1.1.1",
     "@pinia/nuxt": "^0.8.0",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.4",
     "nuxt": "^3.13.2",
     "nuxt-icon": "^1.0.0-beta.7",
+    "pdf-lib": "^1.17.1",
+    "pdfmake": "^0.2.15",
     "pinia": "^2.2.8",
     "vue": "latest",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@sidebase/nuxt-pdf": "^1.0.0-alpha.0",
     "@types/node": "^22.9.0",
     "typescript": "^5.6.3"
   }

@@ -1,7 +1,7 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-3 lg:w-full lg:grid-cols-4 gap-4 my-2 font-bold items-center">
+  <form @submit.prevent="handleSubmit" class="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-3 lg:w-[95%] lg:grid-cols-4  my-3 font-bold items-center">
     <div class="relative w-[300px] h-[35px] m-[5px]">
-      <label>نوع التقرير:</label>
+      <label>{{label}}</label>
       <input v-model="formData.reportType" type="text" class="border border-[#858585] h-full rounded-lg px-2 w-full pr-2" />
       <span v-if="formData.reportType" @click="resetField('reportType')" class="absolute left-4 top-[30%] transform translate-y-1/2 -translate-x-1/2 cursor-pointer">
         <img src="@/assets/icons/Close.png" class="w-[20px] h-[30px]" alt="" srcset="">
@@ -45,53 +45,17 @@
   </form>
 </template>
 
-<!-- <script setup>
-import { ref } from 'vue';
-import { useItemStore } from '~/stores/itemStore';
-
-const store = useItemStore();
-const formData = ref({
-  reportType: '',
-  code: '',
-  quantity: 0,
-  storekeeper: '',
-  date: '',
-});
-const isEditing = ref(false); // Flag to track if we're editing
-const editIndex = ref(null);  // Index of the row being edited
-  console.log(formData);  
-  
-// Function to handle form submission
-function handleSubmit() {
-  if (isEditing.value) {
-    // Update the item in the store
-    store.updateItem(editIndex.value, { ...formData.value });
-    isEditing.value = false; // Reset editing mode
-  } else {
-    // Add a new item
-    store.addItem({ ...formData.value });
-  }
-  resetForm();
-}
-
-// Function to reset the form
-function resetForm() {
-  formData.value = { reportType: '', code: '', quantity: 0, storekeeper: '', date: '' };
-  isEditing.value = false;
-  editIndex.value = null;
-}
-
-// Function to reset a specific field
-function resetField(field) {
-  formData.value[field] = field === 'quantity' ? 0 : ''; // Reset to default value
-}
-</script> -->
-
-
 <script setup>
 import { ref, watch } from 'vue';
 import { useItemStore } from '~/stores/itemStore';
 
+defineProps({
+  label:{
+    type: String,
+    required: true,
+    default: 'UnKnown',
+  }
+});
 const store = useItemStore();
 const formData = ref({
   reportType: '',
