@@ -11,6 +11,7 @@
           <th class="px-4 py-2">الحالة</th>
           <th class="px-4 py-2">مدة الصلاحية</th>
           <th class="px-4 py-2">الملاحظات</th> -->
+          
         </tr>
       </thead>
       <tbody class="rounded-lg">
@@ -20,8 +21,8 @@
           <td class=" px-4 py-2 ">{{ item.reportType }}</td>
           <td class=" px-4 py-2">{{ item.code }}</td>
           <td class=" px-4 py-2">{{ item.quantity }}</td>
-          <td class=" px-4 py-2">{{ item.storekeeper }}</td>
-          <td class=" px-4 py-2">{{ item.date }}</td>
+          <!-- <td class=" px-4 py-2">{{ item.storekeeper }}</td>
+          <td class=" px-4 py-2">{{ item.date }}</td> -->
 
         </tr>
       </tbody>

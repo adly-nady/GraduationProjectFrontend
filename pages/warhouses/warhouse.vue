@@ -17,7 +17,7 @@ const fields = [
   { name: "reportType" , label :"نوع التقرير" , type: "text" } ,
   { name: "code", label: "الكود", type: "text" },
   { name: "quantity", label: "الكمية الواردة", type: "number" },
-  { name: "storeKeeper", label: "امين المخون", type: "text" },
+  { name: "storeKeeper", label: "امين المخزن", type: "text" },
   { name: "date", label: "التاريخ", type: "date" } ,
 ];
 const tableHeader = [
