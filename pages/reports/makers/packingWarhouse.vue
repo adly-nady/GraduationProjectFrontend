@@ -81,13 +81,13 @@ const footer = [
     {
         name: "تقرير طلب صرف",
         content: {
-            reportTitle: "تقرير طلب صرف", 
+            reportTitle: "تقرير طلب صرف",
             formFields: [
                 { name: 'customerName', type: 'text', label: 'اسم العميل ' },
                 { name: 'departmentName', type: 'text', label: 'اسم القسم ' },
                 { name: 'reciverName', type: 'text', label: 'اسم المستلم ' },
             ]
-             , dataSet: staticFormConfig,
+            , dataSet: staticFormConfig,
             tableHeader: [
                 { name: 'اسم الشكارة' },
                 { name: 'وزن الشكارة' },
@@ -98,7 +98,7 @@ const footer = [
             ]
         }
     },
-   
+
 ]
 
 </script>

@@ -5,7 +5,7 @@
    
         <SectionTitle title="اضافة صنف مخزن قطع الغيار" />
         <DynamicForm :fields="formFields" />
-        <ExportTools />
+        <ExportTools :tableHeader="tableHeader"/>
         <Table :header="tableHeader" />
         <ButtonsAdd />
     </div>
@@ -25,13 +25,13 @@ const formFields = [
     { name: 'storekeeper', label: 'الحد الادني من رصيد قطع الغيار:', type: 'number', placeholder: 'Enter sotre Kepper name' },
 ];
 const tableHeader = [
-    { name: 'اسم الصنف' },
-    { name: 'الوحدة' },
-    { name: 'رصيد قبل' },
-    { name: 'رصيد صرف' },
-    { name: 'رصيد بعد' },
-    { name: 'الملاحظات ' }
-];
+        { name: 'رقم الاذن', key: 'id' },
+        { name: 'اسم قطع الغيار', key: 'reportType' },
+        { name: 'الكود', key: 'code' },
+        { name: 'الكمية الواردة', key: 'quantity' },
+        { name: 'امين المخزن', key: 'storekeeper' },
+        { name: 'التاريخ', key: 'date' }
+    ];
 const staticFormConfig = [
     { name: 'sectionTitle', type: 'text', label: 'اسم القسم' },
     { name: 'supplier', type: 'text', label: 'اسم المورد' },

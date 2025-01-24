@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="handleSubmit"
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-3 lg:w-full lg:grid-cols-4 gap-3 font-bold items-start">
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-3 lg:w-full lg:grid-cols-3 gap-5 font-bold items-start">
     <div v-for="(field, index) in props.fields" :key="index" class="relative w-[300px] h-[35px] m-[5px]">
       <label>{{ field.label }}</label>
       <input v-model="formData[field.name]" :type="field.type"

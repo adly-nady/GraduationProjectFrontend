@@ -5,6 +5,7 @@ import { ref } from 'vue';
 export const useItemStore = defineStore('itemStore', () => {
     const items = ref([
         {
+            id: 1,
             reportType: 'تقرير شهري',
             code: 'A001',
             quantity: 100,
@@ -12,6 +13,7 @@ export const useItemStore = defineStore('itemStore', () => {
             date: '2023-10-01',
         },
         {
+            id: 2,
             reportType: 'تقرير سنوي',
             code: 'B002',
             quantity: 200,
@@ -19,6 +21,7 @@ export const useItemStore = defineStore('itemStore', () => {
             date: '2023-09-15',
         },
         {
+            id: 3,
             reportType: 'تقرير ربع سنوي',
             code: 'C003',
             quantity: 150,
@@ -26,6 +29,7 @@ export const useItemStore = defineStore('itemStore', () => {
             date: '2023-08-20',
         },
         {
+            id: 4,
             reportType: 'تقرير ربع سنوي',
             code: 'C003',
             quantity: 150,
@@ -33,6 +37,7 @@ export const useItemStore = defineStore('itemStore', () => {
             date: '2023-08-20',
         },
         {
+            id: 5,
             reportType: 'تقرير ربع سنوي',
             code: 'C003',
             quantity: 150,
@@ -40,6 +45,7 @@ export const useItemStore = defineStore('itemStore', () => {
             date: '2023-08-20',
         },
         {
+            id: 6,
             reportType: 'تقرير ربع سنوي',
             code: 'C003',
             quantity: 150,
@@ -47,6 +53,7 @@ export const useItemStore = defineStore('itemStore', () => {
             date: '2023-08-20',
         },
         {
+            id: 7,
             reportType: 'تقرير ربع سنوي',
             code: 'C003',
             quantity: 150,
@@ -54,6 +61,7 @@ export const useItemStore = defineStore('itemStore', () => {
             date: '2023-08-20',
         },
         {
+            id: 8,
             reportType: 'تقرير ربع سنوي',
             code: 'C003',
             quantity: 150,
@@ -61,6 +69,7 @@ export const useItemStore = defineStore('itemStore', () => {
             date: '2023-08-20',
         },
         {
+            id: 9,
             reportType: 'تقرير ربع سنوي',
             code: 'C003',
             quantity: 150,

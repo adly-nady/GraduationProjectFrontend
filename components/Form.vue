@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-3 lg:w-[95%] lg:grid-cols-4  my-3 font-bold items-center">
+  <form @submit.prevent="handleSubmit" class="grid  grid-cols-1 sm:grid-cols-2 md:!grid-cols-3 mb-3 lg:w-[95%] lg:!grid-cols-3  my-3 font-bold items-center">
     <div class="relative w-[300px] h-[35px] m-[5px]">
       <label>{{label}}</label>
       <input v-model="formData.reportType" type="text" class="border border-[#858585] h-full rounded-lg px-2 w-full pr-2" />

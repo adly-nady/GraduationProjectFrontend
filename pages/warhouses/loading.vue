@@ -2,7 +2,7 @@
     <div class="wrapper bg-white absolute bottom-0 w-full left-0 lg:!w-[94%] h-[95%] lg:!h-[90vh] flex flex-col gap-2 justify-center items-center ">
       <SectionTitle title="قسم التحميل" />
       <DynamicForm :fields="fields" />
-      <ExportTools />
+      <ExportTools :tableHeader="tableHeader" />
       <Table :header="tableHeader" />
       <ButtonsAdd />
     </div>
@@ -17,11 +17,11 @@ const fields = [
   { name: "storeKeeper", label: "امين المخزن", type: "text" } ,
 ];
 const tableHeader = [
-{ name: 'رقم الاذن' },
-  { name: 'نوع التقرير' },
-  { name: 'الكمية الواردة' },
-  { name: 'الكود' },
-  { name: 'امين المخزن' },
- { name: 'التاريخ ' }  
-];
+        { name: 'رقم الاذن', key: 'id' },
+        { name: 'اسم قطع الغيار', key: 'reportType' },
+        { name: 'الكود', key: 'code' },
+        { name: 'الكمية الواردة', key: 'quantity' },
+        { name: 'امين المخزن', key: 'storekeeper' },
+        { name: 'التاريخ', key: 'date' }
+    ];
 </script>
