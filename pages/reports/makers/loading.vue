@@ -1,6 +1,6 @@
 <template>
     <div
-        class="wrapper bg-white absolute bottom-0 w-full left-0 lg:!w-[94%] h-[95%] lg:!h-[90vh] lg:!justify-start lg:!align-start flex flex-col justify-center items-center gap-3 ">
+        class="wrapper z-[-1] bg-white absolute bottom-0 w-full left-0 lg:!w-[94%] h-[95%] lg:!h-[90vh] lg:!justify-start lg:!align-start flex flex-col justify-center items-center gap-3 ">
         <ReportsTest v-if="store.isToggled && store.content" :reportTitle="store.content.reportTitle"
             class="flex flex-col">
             <ReportsRadioForm />
