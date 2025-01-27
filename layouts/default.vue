@@ -1,10 +1,10 @@
 // layouts/default.vue
 <template>
-  <Navbar />
+  <Navbar class=" relative !z-[1001]" />
   
    <SideNav/>
    
-  <main class="w-full h-full">
+  <main class="!w-[95%] absolute !left-0 ">
     <slot />
   </main>
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper z-[-1] bg-white absolute bottom-0 w-full left-0 lg:!w-[94%] h-[95%] lg:!h-[90vh] flex flex-col gap-2 justify-center items-center ">
+    <div class="wrapper bg-white absolute top-4 w-full left-0 lg:!w-[98.5%] h-[95%] lg:!h-[90vh] flex flex-col gap-2 justify-center items-center ">
       <SectionTitle title="قسم التحميل" />
       <DynamicForm :fields="fields" />
       <ExportTools :tableHeader="tableHeader" />

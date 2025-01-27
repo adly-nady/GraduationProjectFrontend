@@ -1,127 +1,60 @@
-<!-- <template>
-  <aside class="sidebar hidden lg:block bg-[#456a94] text-white w-[5%] text-center overflow-scroll scrollbar-none p-4 h-screen fixed">
-    <ul class="menu w-full flex flex-col items-center justify-center gap-2 font-bold">
-      <li
-        v-for="item in menuItems"
-        :key="item.title"
-        :class="[
-          'menu-item px-4 flex items-center gap-4 cursor-pointer hover:bg-[#d9d9d921]',
-          { 'bg-[#d9d9d921]': isActive(item.route) },
-        ]"
-      >
-        <NuxtLink :to="item.route" class="flex justify-center flex-col items-center ">
-          <img class="w-[31px] h-[30px]" :src="item.icon" alt="" srcset="">
-          <span class="text-[12px]">{{ item.title }}</span>
-        </NuxtLink>
-      </li>
-    </ul>
-  </aside>
-</template>
-
-<script setup>
-import { ref, computed } from "vue";
-import { useRoute } from "vue-router";
-import basket from '../assets/icons/sidebar/Basket.png';
-import booking from '../assets/icons/sidebar/Booking.png';
-import Edit from '../assets/icons/sidebar/Edit File.png';
-import Dollar from '../assets/icons/sidebar/Dollar Coin.png';
-import Cart from '../assets/icons/sidebar/Shopping Cart.png';
-import Sale from '../assets/icons/sidebar/Season Sale.png';
-import Menu from '../assets/icons/sidebar/Menu Squared.png';
-import Gear from '../assets/icons/sidebar/Gear.png';
-import Package from '../assets/icons/sidebar/Package.png';
-import Logout from '../assets/icons/sidebar/Logout.png';
-// Sidebar menu items
-const menuItems = ref([
-  { title: "لوحة الاستلام", route: "/dashboard", icon: booking },
-  { title: "منتجات", route: "/products", icon: basket },
-  { title: "تعديل المخزون", route: "/inventory", icon: Edit },
-  { title: "عرض الأسعار", route: "/pricing", icon: Dollar },
-  { title: "المشتريات", route: "/purchases", icon: Cart },
-  { title: "مبيعات", route: "/sales", icon: Sale },
-  { title: "التقارير", route: "/departments", icon: Menu },
-  { title: "المخازن", route: "/warehouses", icon: Package },
-  { title: "الإعدادات", route: "/settings", icon: Gear },
-  { title: "خروج", route: "/logout", icon: Logout },
-]);
-
-// Get the current route
-const route = useRoute();
-
-// Check if the route is active
-const isActive = (path) => route.path === path;
-</script>
-
-<style scoped>
-.sidebar {
-  background-color: #2b4058;
-}
-.menu-item {
-  font-size: 16px;
-}
-
-</style> -->
-
-
-
-
 <template>
-  <aside class="sidebar hidden  lg:block bg-[#456a94] text-white w-20 text-center px-0 py-6 fixed">
-    <ul class="menu flex flex-col items-center justify-center gap-y-2 font-bold !w-[100%]">
+  <aside class="sidebar  !h-[95%]  bottom-0 right-0 !z-50   lg:block bg-[#456a94] text-white w-20 text-center px-0 py-6 fixed">
+    <ul class="menu flex flex-col  items-center justify-center gap-y-2 font-bold !w-[100%]">
       <li
         v-for="item in menuItems"
         :key="item.title"
-        class="menu-item px-4 mb-2 flex flex-col !w-[100%] items-center gap-4 cursor-pointer group"
+        class="menu-item relative px-4 mb-2 flex flex-col !w-[100%] items-center gap-4 cursor-pointer group"
       >
-        <!-- Main Link -->
-        <NuxtLink
-          :to="item.route"
-          class="flex justify-center flex-col items-center hover:bg-[#d9d9d921]"
-          :class="{ 'bg-[#d9d9d921]': isActive(item.route) }"
-        >
-        <img class="w-5" :src="item.icon" alt="" srcset="">
-          <span class="text-[12px]">{{ item.title }}</span>
-        </NuxtLink>
-
-        <!-- Dropdown -->
-        <ul
-          v-if="item.children"
-          class="absolute right-[100%] bg-[#345575] text-white w-[150px] hidden rounded-md shadow-lg z-40  group-hover:block"
-        >
-          <li
-            v-for="subItem in item.children"
-            :key="subItem.title"
-            class="px-4 py-2 text-start hover:bg-[#456a94] group-hover:block"
+        <div>
+          <!-- Main Link -->
+          <NuxtLink
+            :to="item.route"
+            class="flex  justify-center flex-col  items-center hover:bg-[#d9d9d921]"
+            :class="{ 'bg-[#d9d9d921]': isActive(item.route) }"
           >
-            <NuxtLink :to="subItem.route">{{ subItem.title }}
-            </NuxtLink>
-            <ul
-              v-if="subItem.children"
-              class="absolute right-[100%] hover:bg-[#456a94] text-white w-[150px]  rounded-md shadow-lg z-40 "
+            <img class="w-5" :src="item.icon" alt="" srcset="">
+            <span class="text-[12px]">{{ item.title }}</span>
+          </NuxtLink>
+
+          <!-- Dropdown -->
+          <ul
+            v-if="item.children"
+            class="absolute top-0 right-[100%] bg-[#345575] text-white w-[150px] hidden rounded-md shadow-lg z-40 group-hover:block"
+          >
+            <li
+              v-for="subItem in item.children"
+              :key="subItem.title"
+              class="px-4 py-2 text-start hover:bg-[#456a94] customeGroup"
             >
-              <li
-                v-for="nestedItem in subItem.children"
-                :key="nestedItem.title"
-                class="px-4 py-2 text-start bg-[#456a94]"
+              <NuxtLink :to="subItem.route">{{ subItem.title }}</NuxtLink>
+              <ul
+                v-if="subItem.children"
+                class="absolute right-[100%] hidden warhouseDrop hover:bg-[#456a94]  text-white w-[150px] rounded-md shadow-lg z-40"
               >
-                <NuxtLink :to="nestedItem.route">{{ nestedItem.title }}
-                </NuxtLink>
-            
-          </li>
-            </ul>
-          </li>
-        </ul>
+                <li
+                  v-for="nestedItem in subItem.children"
+                  :key="nestedItem.title"
+                  class="px-4 py-2 text-start hover:bg-[#456a94] bg-[#345575]"
+                >
+                  <NuxtLink :to="nestedItem.route">{{ nestedItem.title }}</NuxtLink>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </li>
 
       <div @click="toggleDropdown('menu')">
           <img src="@/assets/icons/sidebar/Slide Down.png"/>
       </div>
-      <ul v-if="dropdowns.menu" class="bg-[#456a94] text-white py-7 mr-[0.5px] bottom-0  absolute text-center  right-[100%] flex flex-col items-center justify-center gap-2 font-bold">
+      <ul v-if="dropdowns.menu" class="bg-[#456a94] text-white py-7 mr-[0.5px] bottom-0  absolute !z-50 text-center  right-[100%] flex flex-col items-center justify-center gap-2 font-bold">
         <li
           v-for="dropdownItem in menuDropdownItems"
           :key="dropdownItem.title"
           class="menu-item relative px-4 mb-2 flex flex-col items-center gap-4 cursor-pointer group"
         >
+        
         <NuxtLink
           :to="dropdownItem.route"
           class="flex justify-center flex-col items-center hover:bg-[#d9d9d921]"
@@ -131,6 +64,8 @@ const isActive = (path) => route.path === path;
           <span class="text-[12px]">{{ dropdownItem.title }}</span>
         </NuxtLink>
 
+      
+        
         </li>
         <div @click="toggleDropdown('menu')">
           <img src="@/assets/icons/sidebar/Slide Up.png"/>
@@ -203,14 +138,8 @@ const menuItems = ref([
   { title: " الصيانه", route: "/sales", icon: Gears },
   {title: " الكهرباء", route: "/departments", icon: Electricity,},
   { title: " الانتاج", route: "/warehouses" , icon: Basket},
-  { title: " التعبئه", route: "/settings", icon: MineCart },
-  { title: " التحميل", route: "/logout", icon: Shipped ,
-  children: [
-      { title: "انشاء اصناف", route: "/warhouses/loading" },
-      { title: "انشاء تقرير", route: "/reports/makers/loading" },
-      { title: "سجلات التقارير", route: "/warhouses/loading" },
-    ],
-  },
+
+
 ]);
 
 const menuDropdownItems = ref([
@@ -218,6 +147,14 @@ const menuDropdownItems = ref([
   { title: " المشتريات", route: "/logout", icon: DollarCoin },
   { title: " المبيعات", route: "/logout", icon: TotalSales },
   { title: " الموارد البشريه", route: "/logout", icon: UserGroups },
+  { title: " التعبئه", route: "/settings", icon: MineCart },  
+  { title: " التحميل", route: "/logout", icon: Shipped ,
+  children: [
+      { title: "انشاء اصناف", route: "/warhouses/loading" },
+      { title: "انشاء تقرير", route: "/reports/makers/loading" },
+      { title: "سجلات التقارير", route: "/warhouses/loading" },
+    ],
+  },
 ])
 // Get the current route
 const route = useRoute();
@@ -246,5 +183,8 @@ const dropdowns = ref({
 
 .group:hover .dropdown {
   display: block;
+}
+.customeGroup:hover .warhouseDrop {
+  display:block!important;
 }
 </style>
