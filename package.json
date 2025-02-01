@@ -23,8 +23,10 @@
     "pdf-lib": "^1.17.1",
     "pdfmake": "^0.2.15",
     "pinia": "^2.2.8",
+    "print-js": "^1.6.0",
     "vue": "latest",
     "vue-router": "^4.4.5",
+    "vue3-print-nb": "^0.1.4",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {

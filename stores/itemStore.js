@@ -60,22 +60,7 @@ export const useItemStore = defineStore('itemStore', () => {
             storekeeper: 'كارما',
             date: '2023-08-20',
         },
-        {
-            id: 8,
-            reportType: 'تقرير ربع سنوي',
-            code: 'C003',
-            quantity: 150,
-            storekeeper: 'كريستاين',
-            date: '2023-08-20',
-        },
-        {
-            id: 9,
-            reportType: 'تقرير ربع سنوي',
-            code: 'C003',
-            quantity: 150,
-            storekeeper: 'جيسي',
-            date: '2023-08-20',
-        },
+       
     ]);
     
     const selectedItem = ref(null);

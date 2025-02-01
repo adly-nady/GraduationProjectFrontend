@@ -2,9 +2,12 @@
     <div class="wrapper bg-white absolute top-4 w-full left-0 lg:!w-[98.5%] h-[95%] lg:!h-[90vh] flex flex-col gap-2 justify-center items-center ">
       <SectionTitle title="اضافه صنف مخزن الخيش" />
       <DynamicForm :fields="fields" />
-      <ExportTools :tableHeader="tableHeader"/>
+      <div class="flex w-full  justify-center items-center gap-5">
+        <ExportTools :tableHeader="tableHeader"/>
+        
+        <ButtonsAdd />
+      </div>
       <Table :header="tableHeader" />
-      <ButtonsAdd />
     </div>
   </template>
 

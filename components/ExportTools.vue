@@ -85,12 +85,32 @@ function printTable() {
     <html>
       <head>
         <title>Print Table</title>
+        <style>
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            color:red ;
+          }
+          .styled-table th, .styled-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            margin: 10px;
+            border: 1px solid black;
+          }
+          .styled-table th {
+            background-color: #f2f2f2;
+            text-align: left;
+          }
+        </style>
       </head>
       <body>
         ${tableHTML}
+        
       </body>
     </html>
   `);
+  console.log(printWindow);
+  
   printWindow.document.close();
   printWindow.print();
 }
@@ -216,12 +236,5 @@ function generateTableHTML(data) {
 }
 
 /* Hide elements when printing */
-@media print {
-  .no-print {
-    display: none;
-  }
-  .print-area {
-    width: 100%;
-  }
-}
+
 </style>

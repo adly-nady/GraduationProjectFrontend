@@ -10,7 +10,7 @@
                     class="lg:w-[103.17px] lg:h-[27px] mb-1 p-1 outline-none rounded-lg" />
             </div> -->
             <div>
-                <label for="myBrowser">اسم المستلم</label>
+                <label for="myBrowser">اسم المستلم :</label>
                 <input list="browsers" class="rounded-lg" id="myBrowser" name="myBrowser" />
                 <datalist id="browsers">
                     <option v-for="(item , index) in dataSet" :key="index" :value="item.label"></option>
@@ -22,14 +22,14 @@
             </div>
 
             <div>
-                <label for="myBrowser">اسم القسم</label>
+                <label for="myBrowser">اسم القسم:</label>
                 <input list="browsers" class="rounded-lg" id="myBrowser" name="myBrowser" />
                 <datalist id="browsers">
                     <option v-for="(item, index) in formField" :key="index" :value="item.label"></option>
                 </datalist>
             </div>
             <div>
-                <label for="myBrowser">اختيار اذن طلب</label>
+                <label for="myBrowser">اختيار اذن طلب:</label>
                 <input list="browsers" class="rounded-lg" id="myBrowser" name="myBrowser" />
                 <datalist id="browsers">
                     <option v-for="(item, index) in formField" :key="index" :value="item.label"></option>
@@ -47,7 +47,7 @@
 </template>
 
 <script setup>
-import { useFormStore } from '@/stores/formStore';
+
 
 const props = defineProps({
     formField: {

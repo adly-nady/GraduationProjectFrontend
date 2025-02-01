@@ -44,4 +44,17 @@ body {
   opacity: 1;
   transform: scale(2) translateY(5);
 }
+
+@media print {
+  aside {
+          visibility: hidden !important;
+        }
+     nav{
+        visibility: hidden !important;
+     }
+
+}
+       
+ 
+
 </style>

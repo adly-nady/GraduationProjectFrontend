@@ -111,10 +111,10 @@ const menuItems = ref([
   { title: " المعمل", route: "/inventory", icon: OpticalMicroscope },
   { title: " المخازن", route: "/pricing", icon: Package ,
   children: [
-      { title: "مخزن قطع غيار", route: "/products/subsection1" ,
+      { title: "مخزن قطع غيار", route: "/warhouses/sparePartsWarhouse" ,
       children: [
-        { title: "انشاء اصناف", route: "/warhouses/loading" },
-        { title: "انشاء تقرير", route: "/reports/makers/loading" },
+        { title: "انشاء اصناف", route: "/warhouses/sparePartsWarhouse" },
+        { title: "انشاء تقرير", route: "/reports/makers/sparePartsWarhouse" },
         { title: "سجلات التقارير", route: "/warhouses/loading" },
     ],
        },
@@ -147,8 +147,8 @@ const menuDropdownItems = ref([
   { title: " المشتريات", route: "/logout", icon: DollarCoin },
   { title: " المبيعات", route: "/logout", icon: TotalSales },
   { title: " الموارد البشريه", route: "/logout", icon: UserGroups },
-  { title: " التعبئه", route: "/settings", icon: MineCart },  
-  { title: " التحميل", route: "/logout", icon: Shipped ,
+  { title: " التعبئه", route: "/warhouses/warhouse", icon: MineCart },  
+  { title: " التحميل", route: "/warhouses/loading", icon: Shipped ,
   children: [
       { title: "انشاء اصناف", route: "/warhouses/loading" },
       { title: "انشاء تقرير", route: "/reports/makers/loading" },

@@ -5,9 +5,12 @@
    
         <SectionTitle title="اضافة صنف مخزن قطع الغيار" />
         <DynamicForm :fields="formFields" />
-        <ExportTools :tableHeader="tableHeader"/>
+        <div class="flex w-full  justify-center items-center gap-5">
+            <ExportTools :tableHeader="tableHeader"/>
+            <ButtonsAdd />
+        </div>
         <Table :header="tableHeader" />
-        <ButtonsAdd />
+
     </div>
 </template>
 

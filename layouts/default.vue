@@ -16,3 +16,15 @@ import Sidebar from '~/src/Sidebar.vue';
 
   
 </script>
+
+<style>
+  @media print {
+  aside {
+          visibility: hidden !important;
+        }
+     nav{
+        visibility: hidden !important;
+     }
+
+}
+</style>
