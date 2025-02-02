@@ -1,28 +1,16 @@
 <template>
-  
-  <div  class="page w-full h-full">
-    <Sidebar></Sidebar>
+  <div class="wrapper overflow-scroll bg-white  absolute top-4 w-full  left-0 lg:!w-[98.5%] h-[95%] lg:!h-[90vh] flex flex-col gap-1 justify-center items-center ">
+    <h1 class="text-center">Home page (coming soon )</h1>
 
-    <div class="page-wrapper">
-      <Body></Body>
-      <Footer></Footer>
-    </div>
   </div>
 
 </template>
 
 
 <script setup>
-// import '@/public/dist/css/tabler.min.css';
-// import '@/public/dist/css/tabler-flags.min.css';
-// import '@/public/dist/css/tabler-payments.min.css';
-// import '@/public/dist/css/tabler-vendors.min.css';
-// import '@/public/dist/css/demo.min.css';
-import Header from './src/Header.vue';
 import Footer from './src/Footer.vue';
 import Body from './src/component/Body.vue';
-import Sidebar from './src/Sidebar.vue';
-console.log(useRuntimeConfig().public.baseURL);
+
   
 </script>
 <style scoped>

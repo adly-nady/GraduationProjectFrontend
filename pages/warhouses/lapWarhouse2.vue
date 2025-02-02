@@ -15,30 +15,32 @@
 
 <script setup>
 
-let formFields= [
-          { label: 'Type Of Product', type: 'text' },
-          { label: 'Ash', type: 'text' },
-          { label: 'Humidity', type: 'text' },
-          { label: 'Falling Number', type: 'text' },
-          { label: 'Wet Gluten', type: 'text' },
-          { label: 'Percentage of Waste', type: 'text' },
-          { label: 'Dry Gluten', type: 'text' },
-          { label: 'Date', type: 'date' },
-          { label: 'Time', type: 'time' },
-          { label: 'Notes', type: 'textarea' },
-        ]
+let   formFields=[
+        { label: 'Select Sample', type: 'text' },
+        { label: 'Moisture', type: 'number' },
+        { label: 'Wet Gluten', type: 'number' },
+        { label: 'Dry Gluten', type: 'number' },
+        { label: 'Index', type: 'number' },
+        { label: 'Falling Number', type: 'number' },
+        { label: 'Ash', type: 'number' },
+        { label: 'Residue Ration', type: 'number' },
+        { label: 'Date', type: 'date' },
+        { label: 'Time', type: 'time' },
+        { label: 'Notes', type: 'textarea' }
+      ];
      let tableFields= [
-          { label: 'Date_EP', key: 'date' },
-          { label: 'Time_EP', key: 'time' },
-          { label: 'Note_EP', key: 'note' },
-          { label: 'Number_EP', key: 'number' },
-          { label: 'Ash_Ep', key: 'ash' },
-          { label: 'Dry_Gluten_Ep', key: 'dryGluten' },
-          { label: 'Wet_Gluten_Ep', key: 'wetGluten' },
-          { label: 'Humidity_Ep', key: 'humidity' },
-          { label: 'Time _Ep', key: 'timeEp' },
-          { label: 'Type Of Product', key: 'productType' },
-          { label: 'Number Ep', key: 'numberEp' }
+     { label: 'Date', model: 'date' },
+        { label: 'Time', model: 'time' },
+        { label: 'Note', model: 'notes' },
+        { label: 'Starch', model: 'starch' },
+        { label: 'Residue Ratio', model: 'residue_ration' },
+        { label: 'Ash', model: 'ash' },
+        { label: 'Fall Number', model: 'falling_number' },
+        { label: 'Index', model: 'index' },
+        { label: 'Dry Gluten', model: 'dry_gluten' },
+        { label: 'Moisture', model: 'moisture' },
+        { label: 'Sample', model: 'sample' },
+        { label: 'Number', model: 'number' }
         ];
      let tableData = [
           { date: '', time: '', note: '', number: '', ash: '', dryGluten: '', wetGluten: '', humidity: '', timeEp: '', productType: '', numberEp: '' },

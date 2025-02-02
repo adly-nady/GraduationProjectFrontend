@@ -108,7 +108,14 @@ const menuItems = ref([
   { title: "لوحه استلام", route: "/dashboard", icon: ControlPanel },
   { title: "قسم البوابه", route: "/dashboard", icon: FrontGateOpen },
   {title: "ميزان البسكول", route: "/products", icon: Scales,},
-  { title: " المعمل", route: "/inventory", icon: OpticalMicroscope },
+  { title: " المعمل", route: "/inventory", icon: OpticalMicroscope ,
+  children: [
+        { title: "المعمل 1", route: "/warhouses/lapWarhouse" },
+        { title: "المعمل 2", route: "/warhouses/lapWarhouse2" },
+        { title: "المعمل 4", route: "/warhouses/lapWarhouse3" },
+        { title: "المعمل 5", route: "/warhouses/lapWarhouse4" },
+    ],
+  },
   { title: " المخازن", route: "/pricing", icon: Package ,
   children: [
       { title: "مخزن قطع غيار", route: "/warhouses/sparePartsWarhouse" ,
