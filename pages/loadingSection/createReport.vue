@@ -69,7 +69,13 @@ const footer = [
     {
         name: " تقرير حركة التحميل ",
         content: {
-            reportTitle: "تقرير حركة التحميل", formFields: form1Config,
+            reportTitle: "تقرير حركة التحميل", 
+            formFields: [
+                { name: 'customerName', type: 'text', label: 'اسم العميل :' },
+                { name: 'departmentName', type: 'text', label: 'اسم القسم :' },
+                { name: 'reciverName', type: 'text', label: 'اسم المستلم :' },
+                { name: 'reciverName', type: 'date' },
+            ],
             dataSet: staticFormConfig,
             tableHeader: [
                 { name: 'اسم الشكارة' },
@@ -84,9 +90,10 @@ const footer = [
         content: {
             reportTitle: "تقرير طلب الانتاج", 
             formFields: [
-                { name: 'customerName', type: 'text', label: 'اسم العميل ' },
-                { name: 'departmentName', type: 'text', label: 'اسم القسم ' },
-                { name: 'reciverName', type: 'text', label: 'اسم المستلم ' },
+                { name: 'customerName', type: 'text', label: 'اسم العميل :' },
+                { name: 'departmentName', type: 'text', label: 'اسم القسم :' },
+                { name: 'reciverName', type: 'text', label: 'اسم المستلم :' },
+                { name: 'reciverName', type: 'date' },
             ]
              , dataSet: staticFormConfig,
             tableHeader: [
@@ -103,9 +110,15 @@ const footer = [
         content: {
             reportTitle: "تقرير  بوليصة الصرف", 
             formFields: [
-                { name: 'customerName', type: 'text', label: 'اسم العميل ' },
-                { name: 'departmentName', type: 'text', label: 'اسم القسم ' },
-                { name: 'reciverName', type: 'text', label: 'اسم المستلم ' },
+                { name: 'customerName', type: 'text', label: 'اسم العميل : ' },
+                { name: 'customerName', type: 'text', label: 'عنوان العميل : ' },
+                { name: 'departmentName', type: 'text', label: 'اسم القسم : ' },
+                { name: 'reciverName', type: 'text', label: 'اسم المستلم : ' },
+                { name: 'reciverName', type: 'date' },
+                { name: 'customerName', type: 'text', label: 'اسم السائق : ' },
+                { name: 'customerName', type: 'text', label: ' رقم الهوية : ' },
+                { name: 'customerName', type: 'text', label: 'رقم الاتصال : ' },
+                { name: 'customerName', type: 'text', label: 'رقم الجرار : ' },
             ]
              , dataSet: staticFormConfig,
             tableHeader: [
@@ -122,9 +135,10 @@ const footer = [
         content: {
             reportTitle: "تقرير خروج منتج", 
             formFields: [
-                { name: 'customerName', type: 'text', label: 'اسم العميل ' },
-                { name: 'departmentName', type: 'text', label: 'اسم القسم ' },
-                { name: 'reciverName', type: 'text', label: 'اسم المستلم ' },
+                { name: 'customerName', type: 'text', label: 'اسم العميل :' },
+                { name: 'departmentName', type: 'text', label: 'اسم القسم :' },
+                { name: 'reciverName', type: 'text', label: 'اسم المستلم :' },
+                { name: 'reciverName', type: 'date' },
             ]
              , dataSet: staticFormConfig,
             tableHeader: [

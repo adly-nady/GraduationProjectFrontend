@@ -17,11 +17,11 @@ const fields = [
   { name: "minimumBalance", label: "الحد الادني من الرصيد", type: "text" } ,
 ];
 const tableHeader = [
-        { name: 'رقم الاذن', key: 'id' },
-        { name: 'اسم قطع الغيار', key: 'reportType' },
         { name: 'الكود', key: 'code' },
-        { name: 'الكمية الواردة', key: 'quantity' },
-        { name: 'امين المخزن', key: 'storekeeper' },
-        { name: 'التاريخ', key: 'date' }
+        { name: ' اسم الصنف', key: 'id' },
+        { name: 'الكود', key: 'code' },
+        { name: ' القسم التابع له ', key: 'reportType' },
+        { name: ' الغرض من وجوده', key: 'quantity' },
+        { name: 'الحد الادني ', key: 'storekeeper' },
     ];
 </script>

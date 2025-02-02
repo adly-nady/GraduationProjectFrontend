@@ -18,19 +18,19 @@ const formStore = useFormStore();
 // const initialData = store.items;
 const reportTitle = "تقرير طلب صرف";
 const formFields = [
-    { name: 'sparePartsName', label: ' اسم قطعة الغيار:', type: 'text' },
-    { name: 'sparePartsCategoriy', label: ' تصنيف قطعة المعدة:', type: 'text' },
-    { name: 'sparePartsCode', label: ' الوحدة:', type: 'number', placeholder: 'Enter quantity' },
-    { name: 'storekeeper', label: 'الحد الادني من رصيد قطع الغيار:', type: 'number', placeholder: 'Enter sotre Kepper name' },
-    { name: 'storekeeper', label: 'الحد الادني من رصيد قطع الغيار:', type: 'number', placeholder: 'Enter sotre Kepper name' },
+    { name: 'sparePartsName', label: ' اسم قطعة الغيار', type: 'text' },
+    { name: 'sparePartsCategoriy', label: ' تصنيف قطعة المعدة', type: 'text' },
+    { name: 'storekeeper', label: 'رقم قطعة الغيار', type: 'number', placeholder: 'Enter sotre Kepper name' },
+    { name: 'sparePartsCode', label: ' الوحدة', type: 'number', placeholder: 'Enter quantity' },
+    { name: 'storekeeper', label: 'الحد الادني من رصيد قطع الغيار', type: 'number', placeholder: 'Enter sotre Kepper name' },
 ];
 const tableHeader = [
-        { name: 'رقم الاذن', key: 'id' },
-        { name: 'اسم قطع الغيار', key: 'reportType' },
         { name: 'الكود', key: 'code' },
-        { name: 'الكمية الواردة', key: 'quantity' },
-        { name: 'امين المخزن', key: 'storekeeper' },
-        { name: 'التاريخ', key: 'date' }
+        { name: ' اسم الصنف', key: 'reportType' },
+        { name: 'الكود', key: 'code' },
+        { name: 'القسم التابع له ', key: 'quantity' },
+        { name: ' الغرض من وجوده', key: 'storekeeper' },
+        { name: 'الحد الادني', key: 'date' }
     ];
 const staticFormConfig = [
     { name: 'sectionTitle', type: 'text', label: 'اسم القسم' },

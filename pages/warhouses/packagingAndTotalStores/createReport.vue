@@ -11,7 +11,7 @@
             <ReportsTable :header="store.content.tableHeader" />
             <ReportsEnd :formFields="reportformFields" />
         </ReportsTest>
-        <SectionTitle title=" قسم مخزن الخيش " />
+        <SectionTitle title=" قسم العبوة والمخازن" />
         <ReportsReportMakerTable :header="tableHeader" :tableBody="tableBody" @update:tableBody="updateTableBody" />
         <ReportsReportMakerFooter :footerData="footer" />
     </div>
@@ -23,8 +23,8 @@ import { useToggleStore } from '../../stores/reportStore';
 const store = useToggleStore();
 const tableHeader = [
     { text: 'تحديد', value: 'تحديد' },
-    { text: 'اسم الصنف', value: 'اسم الصنف' },
-    { text: 'الوحده', value: 'الوحده' },
+    { text: 'الصنف', value: 'الصنف' },
+    { text: 'الكود', value: 'الكود' },
 ]
 const tableBody = ref([
     { name: 'Item 1', code: 'A123', isChecked: false },
@@ -64,17 +64,21 @@ const updateTableBody = (updatedBody) => {
 };
 const footer = [
     {
-        name: " تقرير الاستلام ",
+        name: "تقرير حركة انتاج",
         content: {
-            reportTitle: " تقرير الاستلام ", formFields: form1Config,
+            reportTitle: "تقرير حركة الانتاج",
+            formFields: [
+                { name: 'departmentName', type: 'text', label: 'اسم القسم : ' },
+                { name: 'reciverName', type: 'text', label: 'اسم المستلم : ' },
+                { name: 'reciverName', type: 'date'  },
+            ],
             dataSet: staticFormConfig,
             tableHeader: [
-            { name: 'اسم الصنف' },
+                { name: 'اسم الشكارة' },
                 { name: 'وزن الشكارة' },
-                { name: 'المقاس' },
-                { name: 'رصيد قبل' },
-                { name: 'رصيد وارد' },
-                { name: ' رصيد بعد' },
+                { name: 'عدد الشكاير قبل التعبئة' },
+                { name: 'عدد الشكاير بعد التعبئة' },
+                { name: 'الحالة' },
                 { name: 'الملاحظات ' }
             ]
         }
@@ -82,23 +86,25 @@ const footer = [
     {
         name: "تقرير طلب صرف",
         content: {
-            reportTitle: "تقرير طلب صرف", 
+            reportTitle: "تقرير طلب صرف",
             formFields: [
-                { name: 'customerName', type: 'text', label: 'اسم العميل ' },
-                { name: 'departmentName', type: 'text', label: 'اسم القسم ' },
-                { name: 'reciverName', type: 'text', label: 'اسم المستلم ' },
-            ]
-             , dataSet: staticFormConfig,
+                { name: 'customerName', type: 'text', label: ' اسم العميل: ' },
+                { name: 'departmentName', type: 'text', label: 'اسم القسم : ' },
+                { name: 'reciverName', type: 'text', label: 'اسم المستلم : ' },
+                { name: 'reciverName', type: 'date'  },
+            ],
+            dataSet: staticFormConfig,
             tableHeader: [
-                { name: 'اسم الصنف' },
-                { name: ' رقم طلب الصرف' },
+                { name: 'اسم الشكارة' },
+                { name: 'وزن الشكارة' },
                 { name: 'الوحدة' },
-                { name: ' رصيد الصرف' },
+                { name: 'الكمية' },
+                { name: 'الحالة' },
                 { name: 'الملاحظات ' }
             ]
         }
     },
-   
+
 ]
 
 </script>

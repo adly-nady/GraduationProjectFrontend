@@ -68,7 +68,13 @@ const reportformFields = [
         {
             name: "اذن صرف",
             content: {
-                reportTitle: "اذن صرف", formFields: form1Config,
+                reportTitle: "اذن صرف",
+                formFields: [
+                { name: 'departmentName', type: 'text', label: 'اسم القسم : ' },
+                { name: 'reciverName', type: 'text', label: 'اسم الشخص : ' },
+                { name: 'reciverName', type: 'text', label: 'اسم المستلم : ' },
+                { name: 'reciverName', type: 'date'  },
+            ],
                 dataSet: staticFormConfig,
                 tableHeader: [
                     { name: 'اسم القسم' },
@@ -83,7 +89,14 @@ const reportformFields = [
         {
             name: "اذن استلام",
             content: {
-                reportTitle: "اذن استلام", formFields: form1Config, dataSet: staticFormConfig,
+                reportTitle: "اذن استلام",
+                formFields: [
+                { name: 'departmentName', type: 'text', label: 'اسم القسم : ' },
+                { name: 'reciverName', type: 'text', label: 'اسم الفني : ' },
+                { name: 'reciverName', type: 'text', label: 'امر الشراء : ' },
+                { name: 'reciverName', type: 'date'  },
+            ],
+                dataSet: staticFormConfig,
                 tableHeader: [
                     { name: 'اسم القطعه' },
                     { name: 'الوحدة' },
@@ -95,9 +108,17 @@ const reportformFields = [
             }
         },
         {
-            name: "اذمن استلام مرتجع",
+            name: "اذن استلام مرتجع",
             content: {
-                reportTitle: "اذن استلام مرتجع", formFields: form1Config, dataSet: staticFormConfig,
+                reportTitle: "اذن استلام مرتجع",
+                formFields: [
+                { name: 'departmentName', type: 'text', label: 'اسم القسم : ' },
+                { name: 'reciverName', type: 'text', label: 'اسم المورد : ' },
+                { name: 'reciverName', type: 'text', label: 'اسم المستلم : ' },
+                { name: 'customerName', type: 'text', label: ' اسم المرتجع: ' },
+                { name: 'reciverName', type: 'date'  },
+            ],
+                dataSet: staticFormConfig,
                 tableHeader: [
                     { name: 'اسم الصنف' },
                     { name: 'الكمية ' },
@@ -111,7 +132,15 @@ const reportformFields = [
         {
             name: "تقرير طلب شراء",
             content: {
-                reportTitle: "تقرير طلب شراء", formFields: form1Config, dataSet: staticFormConfig, tableHeader: [
+                reportTitle: "تقرير طلب شراء",
+                formFields: [
+                { name: 'departmentName', type: 'text', label: 'اسم القسم : ' },
+                { name: 'customerName', type: 'text', label: ' اسم العميل: ' },
+                { name: 'reciverName', type: 'text', label: 'اسم المستلم : ' },
+                { name: 'customerName', type: 'text', label: ' اسم المتخصص: ' },
+                { name: 'reciverName', type: 'date'  },
+            ],
+                dataSet: staticFormConfig, tableHeader: [
                     { name: 'اسم الصنف' },
                     { name: 'الوحدة' },
                     { name: 'الكمية الحالية' },
@@ -124,7 +153,18 @@ const reportformFields = [
         {
             name: "اذن طلب فحص",
             content: {
-                reportTitle: "اذن طلب فحص", formFields: form1Config, dataSet: staticFormConfig,
+                reportTitle: "اذن طلب فحص",
+                formFields: [
+                { name: 'departmentName', type: 'text', label: 'اسم القسم : ' },
+                { name: 'reciverName', type: 'text', label: 'اسم المورد : ' },
+                { name: 'reciverName', type: 'text', label: 'اسم المستلم : ' },
+                { name: 'customerName', type: 'text', label: ' اسم العميل: ' },
+                { name: 'reciverName', type: 'date'  },
+                { name: 'customerName', type: 'text', label: ' اسم السائق: ' },
+                { name: 'customerName', type: 'text', label: ' اسم المسئول: ' },
+                { name: 'reciverName', type: 'text', label: 'رقم البوليصه : ' },
+            ],
+                dataSet: staticFormConfig,
                 tableHeader: [
                     { name: 'اسم المنتج' },
                     { name: 'الوحدة' },

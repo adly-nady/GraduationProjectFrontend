@@ -22,20 +22,21 @@
             v-if="item.children"
             class="absolute top-0 right-[100%] bg-[#345575] text-white w-[150px] hidden rounded-md shadow-lg z-40 group-hover:block"
           >
+
             <li
               v-for="subItem in item.children"
               :key="subItem.title"
-              class="px-4 py-2 text-start hover:bg-[#456a94] customeGroup"
+              class="px-4 py-2 relative text-start hover:rounded-md rounded-md hover:bg-[#456a94] customeGroup"
             >
               <NuxtLink :to="subItem.route">{{ subItem.title }}</NuxtLink>
               <ul
                 v-if="subItem.children"
-                class="absolute right-[100%] hidden warhouseDrop hover:bg-[#456a94]  text-white w-[150px] rounded-md shadow-lg z-40"
+                class="absolute right-[100%] top-0 hidden warhouseDrop hover:bg-[#456a94]  text-white w-[150px] rounded-md shadow-lg z-40"
               >
                 <li
                   v-for="nestedItem in subItem.children"
                   :key="nestedItem.title"
-                  class="px-4 py-2 text-start hover:bg-[#456a94] bg-[#345575]"
+                  class="px-4 py-2 text-start hover:rounded-md hover:bg-[#456a94] bg-[#345575]"
                 >
                   <NuxtLink :to="nestedItem.route">{{ nestedItem.title }}</NuxtLink>
                 </li>
@@ -44,6 +45,7 @@
           </ul>
         </div>
       </li>
+      <!-- ///////////////////////////////////////////////// -->
 
       <div @click="toggleDropdown('menu')">
           <img src="@/assets/icons/sidebar/Slide Down.png"/>
@@ -54,18 +56,38 @@
           :key="dropdownItem.title"
           class="menu-item relative px-4 mb-2 flex flex-col items-center gap-4 cursor-pointer group"
         >
-        
-        <NuxtLink
-          :to="dropdownItem.route"
-          class="flex justify-center flex-col items-center hover:bg-[#d9d9d921]"
-          :class="{ 'bg-[#d9d9d921]': isActive(dropdownItem.route) }"
-        >
-        <img class="w-5" :src="dropdownItem.icon" alt="" srcset="">
-          <span class="text-[12px]">{{ dropdownItem.title }}</span>
-        </NuxtLink>
-
-      
-        
+          <NuxtLink
+            :to="dropdownItem.route"
+            class="flex justify-center flex-col items-center hover:bg-[#d9d9d921]"
+            :class="{ 'bg-[#d9d9d921]': isActive(dropdownItem.route) }"
+          >
+            <img class="w-5" :src="dropdownItem.icon" alt="" srcset="">
+            <span class="text-[12px]">{{ dropdownItem.title }}</span>
+          </NuxtLink>  
+          <ul
+            v-if="dropdownItem.children"
+            class="absolute top-0 right-[100%] bg-[#345575] text-white w-[150px] hidden rounded-md shadow-lg z-40 group-hover:block"
+          >
+            <li
+                v-for="subDropdownItem in dropdownItem.children"
+                :key="subDropdownItem.title"
+                class="px-4 py-2 text-start hover:rounded-md hover:bg-[#456a94] customeGroup"
+            >
+            <NuxtLink :to="subDropdownItem.route">{{ subDropdownItem.title }}</NuxtLink>
+            <ul
+                v-if="subDropdownItem.children"
+                class="absolute right-[100%] hidden warhouseDrop hover:bg-[#456a94]  text-white w-[150px] rounded-md shadow-lg z-40"
+              >
+                <li
+                  v-for="nestedItem in subDropdownItem.children"
+                  :key="nestedItem.title"
+                  class="px-4 py-2 text-start hover:rounded-md hover:bg-[#456a94] bg-[#345575]"
+                >
+                  <NuxtLink :to="nestedItem.route">{{ nestedItem.title }}</NuxtLink>
+                </li>
+              </ul>
+            </li>
+        </ul>
         </li>
         <div @click="toggleDropdown('menu')">
           <img src="@/assets/icons/sidebar/Slide Up.png"/>
@@ -111,25 +133,24 @@ const menuItems = ref([
   { title: " المعمل", route: "/inventory", icon: OpticalMicroscope },
   { title: " المخازن", route: "/pricing", icon: Package ,
   children: [
-      { title: "مخزن قطع غيار", route: "/products/subsection1" ,
+      { title: "مخزن قطع غيار", route: "/warhouses/spareParts/createReport" ,
       children: [
-        { title: "انشاء اصناف", route: "/warhouses/loading" },
-        { title: "انشاء تقرير", route: "/reports/makers/loading" },
-        { title: "سجلات التقارير", route: "/warhouses/loading" },
+        { title: "اضافة اصناف", route: "/warhouses/spareParts/addProduct" },
+        { title: "انشاء تقرير", route: "/warhouses/spareParts/createReport" },
+        { title: "سجلات التقارير", route: "/warhouses/spareParts/reportRecords" },
     ],
        },
-      { title: "مخزن تام", route: "/products/subsection2" ,
+      { title: "مخزن تام", route: "/warhouses/packagingAndTotalStores/createReport" ,
       children: [
-        { title: "انشاء اصناف", route: "/warhouses/loading" },
-        { title: "انشاء تقرير", route: "/reports/makers/loading" },
-        { title: "سجلات التقارير", route: "/warhouses/loading" },
+        { title: "انشاء تقرير", route: "/warhouses/packagingAndTotalStores/createReport" },
+        { title: "سجلات التقارير", route: "/warhouses/packagingAndTotalStores/reportRecords" },
     ],
       },
-      { title: "مخزن خيش", route: "/products/subsection2" ,
+      { title: "مخزن خيش", route: "/warhouses/burlap/createReports" ,
       children: [
-        { title: "انشاء اصناف", route: "/warhouses/loading" },
-        { title: "انشاء تقرير", route: "/reports/makers/loading" },
-        { title: "سجلات التقارير", route: "/warhouses/loading" },
+        { title: "اضافة اصناف", route: "/warhouses/burlap/addProduct" },
+        { title: "انشاء تقرير", route: "/warhouses/burlap/createReports" },
+        { title: "سجلات التقارير", route: "/warhouses/burlap/reportRecords" },
     ],
       },
     ],
@@ -148,11 +169,10 @@ const menuDropdownItems = ref([
   { title: " المبيعات", route: "/logout", icon: TotalSales },
   { title: " الموارد البشريه", route: "/logout", icon: UserGroups },
   { title: " التعبئه", route: "/settings", icon: MineCart },  
-  { title: " التحميل", route: "/logout", icon: Shipped ,
+  { title: " التحميل", route: "/loadingSection/createReport", icon: Shipped ,
   children: [
-      { title: "انشاء اصناف", route: "/warhouses/loading" },
-      { title: "انشاء تقرير", route: "/reports/makers/loading" },
-      { title: "سجلات التقارير", route: "/warhouses/loading" },
+      { title: "انشاء تقرير", route: "/loadingSection/createReport" },
+      { title: "سجلات التقارير", route: "/loadingSection/reportRecords" },
     ],
   },
 ])

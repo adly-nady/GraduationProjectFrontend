@@ -3,15 +3,14 @@
     class="wrapper bg-white absolute top-4 w-full left-0 lg:!w-[98.5%] h-[95%] lg:!h-[90vh] flex flex-col gap-2 justify-center items-center ">
         <ReportsTest v-if="store.isToggled && store.content" :reportTitle="store.content.reportTitle"
             class="flex flex-col">
-            <ReportsRadioForm />
+            <ReportsRadioForm/>
             <div class="flex flex-col justify-center gap-2 mt-1">
                 <ReportsForm :formField="store.content.formFields" :dataSet="store.content.dataSet" />
-
             </div>
             <ReportsTable :header="store.content.tableHeader" />
             <ReportsEnd :formFields="reportformFields" />
         </ReportsTest>
-        <SectionTitle title=" قسم العبوة والمخازن" />
+        <SectionTitle title=" قسم مخزن الخيش " />
         <ReportsReportMakerTable :header="tableHeader" :tableBody="tableBody" @update:tableBody="updateTableBody" />
         <ReportsReportMakerFooter :footerData="footer" />
     </div>
@@ -23,8 +22,8 @@ import { useToggleStore } from '../../stores/reportStore';
 const store = useToggleStore();
 const tableHeader = [
     { text: 'تحديد', value: 'تحديد' },
-    { text: 'الصنف', value: 'الصنف' },
-    { text: 'الكود', value: 'الكود' },
+    { text: 'اسم الصنف', value: 'اسم الصنف' },
+    { text: 'الوحده', value: 'الوحده' },
 ]
 const tableBody = ref([
     { name: 'Item 1', code: 'A123', isChecked: false },
@@ -64,16 +63,25 @@ const updateTableBody = (updatedBody) => {
 };
 const footer = [
     {
-        name: "تقرير حركة انتاج",
+        name: " تقرير الاستلام ",
         content: {
-            reportTitle: "تقرير حركة الانتاج", formFields: form1Config,
+            reportTitle: " تقرير الاستلام ",
+            formFields: [
+                { name: 'customerName', type: 'text', label: ' اسم العميل: ' },
+                { name: 'departmentName', type: 'text', label: 'اسم القسم : ' },
+                { name: 'reciverName', type: 'text', label: 'المورد : ' },
+                { name: 'reciverName', type: 'text', label: 'اسم المستلم : ' },
+                { name: 'reciverName', type: 'text', label: 'رقم البوليصه : ' },
+                { name: 'reciverName', type: 'date'  },
+            ],
             dataSet: staticFormConfig,
             tableHeader: [
-                { name: 'اسم الشكارة' },
+            { name: 'اسم الصنف' },
                 { name: 'وزن الشكارة' },
-                { name: 'عدد الشكاير قبل التعبئة' },
-                { name: 'عدد الشكاير بعد التعبئة' },
-                { name: 'الحالة' },
+                { name: 'المقاس' },
+                { name: 'رصيد قبل' },
+                { name: 'رصيد وارد' },
+                { name: ' رصيد بعد' },
                 { name: 'الملاحظات ' }
             ]
         }
@@ -81,24 +89,26 @@ const footer = [
     {
         name: "تقرير طلب صرف",
         content: {
-            reportTitle: "تقرير طلب صرف",
+            reportTitle: "تقرير طلب صرف", 
             formFields: [
-                { name: 'customerName', type: 'text', label: 'اسم العميل ' },
-                { name: 'departmentName', type: 'text', label: 'اسم القسم ' },
-                { name: 'reciverName', type: 'text', label: 'اسم المستلم ' },
-            ]
-            , dataSet: staticFormConfig,
+                { name: 'customerName', type: 'text', label: ' اسم العميل: ' },
+                { name: 'departmentName', type: 'text', label: 'اسم القسم : ' },
+                { name: 'reciverName', type: 'text', label: 'المورد : ' },
+                { name: 'reciverName', type: 'text', label: 'اسم المستلم : ' },
+                { name: 'reciverName', type: 'text', label: 'رقم البوليصه : ' },
+                { name: 'reciverName', type: 'date'  },
+            ],
+            dataSet: staticFormConfig,
             tableHeader: [
-                { name: 'اسم الشكارة' },
-                { name: 'وزن الشكارة' },
+                { name: 'اسم الصنف' },
+                { name: ' رقم طلب الصرف' },
                 { name: 'الوحدة' },
-                { name: 'الكمية' },
-                { name: 'الحالة' },
+                { name: ' رصيد الصرف' },
                 { name: 'الملاحظات ' }
             ]
         }
     },
-
+   
 ]
 
 </script>
