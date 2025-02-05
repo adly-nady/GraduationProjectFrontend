@@ -64,7 +64,7 @@ const updateTableBody = (updatedBody) => {
 };
 const footer = [
     {
-        name: "تقرير حركة انتاج",
+        name: "تقرير معادله الرماد",
         content: {
             reportTitle: "تقرير حركة الانتاج",
             formFields: [
@@ -84,7 +84,7 @@ const footer = [
         }
     },
     {
-        name: "تقرير طلب صرف",
+        name: "تقرير الاقماح الوارده",
         content: {
             reportTitle: "تقرير طلب صرف",
             formFields: [
