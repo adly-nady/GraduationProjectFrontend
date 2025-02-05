@@ -133,6 +133,7 @@ const menuItems = ref([
   {title: "ميزان البسكول", route:null, icon: Scales,},
   { title: " المعمل", route: null, icon: OpticalMicroscope ,
   children: [
+  { title: "انشاء تقارير", route: "/warhouses/lap/createreport" },
         { title: "المعمل 1", route: "/warhouses/lap/lapWarhouse" },
         { title: "المعمل 2", route: "/warhouses/lap/lapWarhouse2" },
         { title: "المعمل 4", route: "/warhouses/lap/lapWarhouse3" },
