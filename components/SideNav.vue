@@ -128,8 +128,8 @@ import DollarCoin from '../assets/icons/sidebar/Dollar Coin.png';
 
 // Menu items, with dropdown submenus for specific items
 const menuItems = ref([
-  { title: "لوحه استلام", route: null ,icon: ControlPanel },
-  { title: "قسم البوابه", route:null , icon: FrontGateOpen },
+  { title: "لوحه استلام", route: null ,icon: ControlPanel ,route:'/laboratorySection/setting1'},
+  { title: "قسم البوابه", route:null , icon: FrontGateOpen ,route:'/laboratorySection/setting2' },
   {title: "ميزان البسكول", route:null, icon: Scales,},
   { title: " المعمل", route: null, icon: OpticalMicroscope ,
   children: [
