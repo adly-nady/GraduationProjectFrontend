@@ -1,10 +1,10 @@
 <template>
-    <div class="w-full bg-white flex justify-start gap-2 items-center">
+    <div class="w-full bg-white flex justify-start gap-2 mt-5 items-center">
         <div class="bg-[#345173] rounded-lg w-10 h-10 flex items-center justify-center">
-            <img :src="cancel" alt="Cancel Icon" />
+            <img :src="cancel" alt="Cancel Icon" class="cursor-pointer" @click="uncheckAll()" />
         </div>
         <div class="bg-[#345173] w-10 h-10 rounded-lg flex items-center justify-center">
-            <img :src="Checked" alt="Checked Icon" class="w-[30px] h-[30px]" />
+            <img :src="Checked" @click="checkAll()" alt="Checked Icon" class="w-[30px] h-[30px] cursor-pointer" />
         </div>
     </div>
 
@@ -78,18 +78,21 @@ const editItem = (index) => {
     store.setSelectedItem(item);
 };
 
-// Delete Item
-const deleteItem = (index) => {
-    store.deleteItem(index);
-    emit('update:tableBody', props.tableBody.filter((_, i) => i !== index));
-};
 
-// Duplicate Item
-const duplicateItem = (index) => {
-    const itemToDuplicate = { ...props.tableBody[index] };
-    emit('update:tableBody', [...props.tableBody, itemToDuplicate]);
+const  checkAll = () => {
+    const updatedTableBody = [...props.tableBody];
+    updatedTableBody.forEach((item) => {
+        item.isChecked = true;
+    });
+    emit('update:tableBody', updatedTableBody);
 };
-
+const uncheckAll = () => {
+    const updatedTableBody = [...props.tableBody];
+    updatedTableBody.forEach((item) => {
+        item.isChecked = false;
+    });
+    emit('update:tableBody', updatedTableBody);
+};
 // Update Checkbox Value
 const updateValue = (index, value) => {
     const updatedTableBody = [...props.tableBody];

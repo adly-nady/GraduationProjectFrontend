@@ -11,7 +11,7 @@
             <ReportsTable :header="store.content.tableHeader" />
             <ReportsEnd :formFields="reportformFields" />
         </ReportsTest>
-        <SectionTitle title=" قسم العبوة والمخازن" />
+        <SectionTitle  title=" قسم العبوة والمخازن" />
         <ReportsReportMakerTable :header="tableHeader" :tableBody="tableBody" @update:tableBody="updateTableBody" />
         <ReportsReportMakerFooter :footerData="footer" />
     </div>

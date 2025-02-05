@@ -9,7 +9,8 @@
         <div>
           <!-- Main Link -->
           <NuxtLink
-            :to="item.route"
+            :to="item.route || ''"
+            :disabled="!item.route"
             class="flex  justify-center flex-col  items-center hover:bg-[#d9d9d921]"
             :class="{ 'bg-[#d9d9d921]': isActive(item.route) }"
           >
@@ -127,11 +128,18 @@ import DollarCoin from '../assets/icons/sidebar/Dollar Coin.png';
 
 // Menu items, with dropdown submenus for specific items
 const menuItems = ref([
-  { title: "لوحه استلام", route: "/dashboard", icon: ControlPanel },
-  { title: "قسم البوابه", route: "/dashboard", icon: FrontGateOpen },
-  {title: "ميزان البسكول", route: "/products", icon: Scales,},
-  { title: " المعمل", route: "/inventory", icon: OpticalMicroscope },
-  { title: " المخازن", route: "/pricing", icon: Package ,
+  { title: "لوحه استلام", route: null ,icon: ControlPanel },
+  { title: "قسم البوابه", route:null , icon: FrontGateOpen },
+  {title: "ميزان البسكول", route:null, icon: Scales,},
+  { title: " المعمل", route: null, icon: OpticalMicroscope ,
+  children: [
+        { title: "المعمل 1", route: "/warhouses/lap/lapWarhouse" },
+        { title: "المعمل 2", route: "/warhouses/lap/lapWarhouse2" },
+        { title: "المعمل 4", route: "/warhouses/lap/lapWarhouse3" },
+        { title: "المعمل 5", route: "/warhouses/lap/lapWarhouse4" },
+    ],
+   },
+  { title: " المخازن", route: null, icon: Package ,
   children: [
       { title: "مخزن قطع غيار", route: "/warhouses/spareParts/createReport" ,
       children: [
@@ -149,16 +157,16 @@ const menuItems = ref([
       { title: "مخزن خيش", route: "/warhouses/burlap/createReports" ,
       children: [
         { title: "اضافة اصناف", route: "/warhouses/burlap/addProduct" },
-        { title: "انشاء تقرير", route: "/warhouses/burlap/createReports" },
+        { title: "انشاء تقرير", route: "/warhouses/burlap/createReport" },
         { title: "سجلات التقارير", route: "/warhouses/burlap/reportRecords" },
     ],
       },
     ],
   },
-  { title: " الصوامع المعدنيه", route: "/purchases", icon: IceMaker },
-  { title: " الصيانه", route: "/sales", icon: Gears },
-  {title: " الكهرباء", route: "/departments", icon: Electricity,},
-  { title: " الانتاج", route: "/warehouses" , icon: Basket},
+  { title: " الصوامع المعدنيه", route: null, icon: IceMaker },
+  { title: " الصيانه", route: null, icon: Gears },
+  {title: " الكهرباء", route: null, icon: Electricity,},
+  { title: " الانتاج", route: null , icon: Basket},
 
 
 ]);
@@ -168,7 +176,12 @@ const menuDropdownItems = ref([
   { title: " المشتريات", route: "/logout", icon: DollarCoin },
   { title: " المبيعات", route: "/logout", icon: TotalSales },
   { title: " الموارد البشريه", route: "/logout", icon: UserGroups },
-  { title: " التعبئه", route: "/settings", icon: MineCart },  
+  { title: " التعبئه", route: "/settings", icon: MineCart ,
+  children: [
+        { title: "انشاء تقرير", route: "/warhouses/packagingAndTotalStores/createReport" },
+        { title: "سجلات التقارير", route: "/warhouses/packagingAndTotalStores/reportRecords" },
+    ],
+  },  
   { title: " التحميل", route: "/loadingSection/createReport", icon: Shipped ,
   children: [
       { title: "انشاء تقرير", route: "/loadingSection/createReport" },
