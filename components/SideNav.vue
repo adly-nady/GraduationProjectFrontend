@@ -154,7 +154,7 @@ const menuItems = ref([
         { title: "سجلات التقارير", route: "/warhouses/packagingAndTotalStores/reportRecords" },
     ],
       },
-      { title: "مخزن خيش", route: "/warhouses/burlap/createReports" ,
+      { title: "مخزن خيش", route: "/warhouses/burlap/createReport" ,
       children: [
         { title: "اضافة اصناف", route: "/warhouses/burlap/addProduct" },
         { title: "انشاء تقرير", route: "/warhouses/burlap/createReport" },

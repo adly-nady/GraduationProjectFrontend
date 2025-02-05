@@ -1,6 +1,6 @@
 <template>
     <button
-        class="flex items-center justify-center bg-blue-800 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-200"
+        class="flex items-center justify-center bg-[#345173] text-white px-4 py-2 rounded-lg shadow hover:bg-[#4c78aa] transition duration-200"
         @click="handleClick">
         <img :src="download" alt="Downloading" class="h-5 w-5" />
         <span class="mr-2">حفظ التقرير</span>
