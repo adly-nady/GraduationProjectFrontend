@@ -72,11 +72,7 @@ const emit = defineEmits(['update:tableBody']);
 // Item Store
 const store = useItemStore();
 
-// Edit Item
-const editItem = (index) => {
-    const item = props.tableBody[index];
-    store.setSelectedItem(item);
-};
+
 
 
 const  checkAll = () => {

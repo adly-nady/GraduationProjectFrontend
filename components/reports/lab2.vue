@@ -1,5 +1,6 @@
 <template>
-    <div 
+    <div
+    v-if="isVisible"
         class="fixed  inset-0 w-[100%] bg-[#D9D9D9] bg-opacity-80 flex justify-around overflow-scroll  lg:justify-center  items-center z-50">
         <!-- Popup Container -->
         <div class="bg-white w-[90%] md:w-[70%]  p-6  shadow-lg relative">
@@ -165,7 +166,6 @@ import  square  from '../../assets/icons/Square.png';
 import exit from '../../../assets/icons/reports/Close.png';
 import { useToggleStore } from '../../stores/reportStore';
 
-
 const store = useToggleStore() ;
 const reprotContent = store.content ;
 console.log(store.content);
@@ -176,12 +176,13 @@ const props = defineProps({
         defualt: '',
     },
 });
-
+const isVisible = ref(true);
 
 
 function closePopup() {
-   store.toggle();
+    isVisible.value = false; // Hide the popup
 }
+
 
 function handleSquare() {
     console.log('Square button clicked');
@@ -193,18 +194,18 @@ function handleEmail() {
 
 
 // Click handler to detect click outside the circular menu
-const closeMenuIfClickedOutside = (event) => {
-    const menu = document.getElementById('circular-menu');
-    if (menu && !menu.contains(event.target)) {
-        isCircularMenuOpen.value = false; // Close the menu if clicked outside
-    }
-};
+// const closeMenuIfClickedOutside = (event) => {
+//     const menu = document.getElementById('circular-menu');
+//     if (menu && !menu.contains(event.target)) {
+//         isCircularMenuOpen.value = false; // Close the menu if clicked outside
+//     }
+// };
 // Lifecycle hooks to add/remove event listener
-onMounted(() => {
-    document.addEventListener("click", closeMenuIfClickedOutside);
-});
+// onMounted(() => {
+//     document.addEventListener("click", closeMenuIfClickedOutside);
+// });
 
-onBeforeUnmount(() => {
-    document.removeEventListener("click", closeMenuIfClickedOutside);
-});
+// onBeforeUnmount(() => {
+//     document.removeEventListener("click", closeMenuIfClickedOutside);
+// });
 </script>
