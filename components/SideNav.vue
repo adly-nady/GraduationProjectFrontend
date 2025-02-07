@@ -128,16 +128,24 @@ import DollarCoin from '../assets/icons/sidebar/Dollar Coin.png';
 
 // Menu items, with dropdown submenus for specific items
 const menuItems = ref([
-  { title: "لوحه استلام", route: null ,icon: ControlPanel },
-  { title: "قسم البوابه", route:null , icon: FrontGateOpen },
+  { title: "لوحه استلام", route: null ,icon: ControlPanel ,route:'/laboratorySection/setting1'},
+  { title: "قسم البوابه", route:null , icon: FrontGateOpen ,route:'/laboratorySection/setting2' },
   {title: "ميزان البسكول", route:null, icon: Scales,},
   { title: " المعمل", route: null, icon: OpticalMicroscope ,
   children: [
+<<<<<<< HEAD
   { title: "انشاء تقارير", route: "/warhouses/lap/createreport" },
         { title: "المعمل 1", route: "/warhouses/lap/lapWarhouse" },
         { title: "المعمل 2", route: "/warhouses/lap/lapWarhouse2" },
         { title: "المعمل 4", route: "/warhouses/lap/lapWarhouse3" },
         { title: "المعمل 5", route: "/warhouses/lap/lapWarhouse4" },
+=======
+  { title: "انشاء تقارير", route: "/labSection/createReport" },
+        { title: "المعمل 1", route: "/labSection/lab1" },
+        { title: "المعمل 2", route: "/labSection/lab2" },
+        { title: "المعمل 4", route: "/labSection/lab3" },
+        { title: "المعمل 5", route: "/labSection/lab4" },
+>>>>>>> origin/feature3
     ],
    },
   { title: " المخازن", route: null, icon: Package ,
@@ -155,7 +163,7 @@ const menuItems = ref([
         { title: "سجلات التقارير", route: "/warhouses/packagingAndTotalStores/reportRecords" },
     ],
       },
-      { title: "مخزن خيش", route: "/warhouses/burlap/createReports" ,
+      { title: "مخزن خيش", route: "/warhouses/burlap/createReport" ,
       children: [
         { title: "اضافة اصناف", route: "/warhouses/burlap/addProduct" },
         { title: "انشاء تقرير", route: "/warhouses/burlap/createReport" },
