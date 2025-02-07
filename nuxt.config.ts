@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['nuxt-icon', '@pinia/nuxt','@nuxtjs/tailwindcss'],
+  modules: ['nuxt-icon', '@pinia/nuxt','@nuxtjs/tailwindcss','@hypernym/nuxt-gsap'],
 
   tailwindcss: {
     exposeConfig: true,

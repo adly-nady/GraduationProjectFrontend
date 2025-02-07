@@ -8,9 +8,9 @@
         </div>
     </div>
 
-    <div class="w-full h-full lg:!h-[350px] rounded-lg !overflow-scroll hide-scrollbar mt-2">
+    <div class="w-full h-full lg:!h-[500px] rounded-lg !overflow-scroll hide-scrollbar mt-2">
         <table
-            class="table-auto lg:!h-full h-24 rounded-lg relative !overflow-scroll w-full border-collapse border hide-scrollbar border-gray-300">
+            class="table-auto lg:!h-full  rounded-lg relative !overflow-scroll w-full border-collapse border hide-scrollbar border-gray-300">
             <thead class="bg-[#E5E1E1] font-bold text-lg sticky top-0 z-10 rounded-lg text-center border-0">
                 <tr>
                     <th v-for="(item, index) in header" :key="'header-' + index" class="px-4 py-2">
@@ -54,7 +54,6 @@ import Checked from '../assets/icons/reports/Checked.png';
 import cancel from '../assets/icons/reports/Cancel.png';
 import done from '../assets/icons/reports/Done.png';
 import { defineProps, defineEmits } from 'vue';
-
 // Props and Emits
 const props = defineProps({
     header: {
@@ -66,6 +65,11 @@ const props = defineProps({
         required: true,
     },
 });
+
+const { $gsap } = useNuxtApp() ;
+
+
+
 
 const emit = defineEmits(['update:tableBody']);
 
@@ -95,6 +99,7 @@ const updateValue = (index, value) => {
     updatedTableBody[index].isChecked = value;
     emit('update:tableBody', updatedTableBody);
 };
+
 </script>
 
 <style scoped>

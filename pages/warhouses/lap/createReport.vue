@@ -34,6 +34,13 @@ const tableBody = ref([
     { name: 'Item 2', code: 'B456', isChecked: false },
     { name: 'Item 2', code: 'B456', isChecked: false },
     { name: 'Item 2', code: 'B456', isChecked: false },
+    { name: 'Item 1', code: 'A123', isChecked: false },
+    { name: 'Item 2', code: 'B456', isChecked: false },
+    { name: 'Item 2', code: 'B456', isChecked: false },
+    { name: 'Item 2', code: 'B456', isChecked: false },
+    { name: 'Item 2', code: 'B456', isChecked: false },
+    { name: 'Item 2', code: 'B456', isChecked: false },
+    { name: 'Item 2', code: 'B456', isChecked: false },
 ]);
 const form1Config = [
     { name: 'departmentName', type: 'text', label: 'اسم القسم ' },
