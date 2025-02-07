@@ -1,31 +1,31 @@
 <template>
   <div class="flex w-full gap-3 justify-start">
     <!-- Print Button -->
-    <button @click="showPrintModal" class="py-3 rounded-lg  hover:bg-blue-200 flex flex-col items-center">
+    <button @click="showPrintModal" class="py-3 rounded-lg  flex flex-col items-center">
       <img :src="print" alt="Print" class="w-10 h-10" />
 
 
     </button>
      <!-- Print modal -->
-     <div v-if="isPrintModalVisible" class="fixed z-30 inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75">
-      <div class="bg-white p-4 rounded-lg shadow-lg w-3/4 h-3/4 overflow-auto">
+     <div v-if="isPrintModalVisible" class="fixed z-30 inset-0 text-center flex items-center justify-center bg-gray-500 bg-opacity-75">
+      <div class="bg-white rounded-lg shadow-lg p-14 overflow-auto">
         <div ref="printArea" class="print-area">
           <!-- The table content will be injected here -->
         </div>
-        <div class="flex justify-end mt-4 no-print">
-          <button @click="printContent" class="mr-2 bg-blue-500 no-print text-white px-4 py-2 rounded">Print</button>
-          <button @click="closePrintModal" class="bg-red-500 no-print text-white px-4 py-2 rounded">Close</button>
+        <div class="flex justify-end mt-6 no-print">
+          <button @click="printContent" class=" bg-blue-500 no-print text-white px-4 py-2 rounded">Print</button>
+          <button @click="closePrintModal" class="bg-red-500 mr-2 no-print text-white px-4 py-2 rounded">Close</button>
         </div>
       </div>
     </div>
     <!-- Export to PDF Button -->
-    <button @click="exportToPDF" class="py-3 rounded-lg  hover:bg-red-200 flex flex-col items-center">
+    <button @click="exportToPDF" class="py-3 rounded-lg  flex flex-col items-center">
       <img :src="pdf" alt="PDF" class="w-10 h-10" />
 
     </button>
 
     <!-- Export to Excel Button -->
-    <button @click="exportToExcel" class="py-3 rounded-lg  hover:bg-green-200 flex flex-col items-center">
+    <button @click="exportToExcel" class="py-3 rounded-lg flex flex-col items-center">
       <img :src="excel" alt="Excel" class="w-10 h-10" />
 
     </button>
