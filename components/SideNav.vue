@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar  !h-[95%]  bottom-0 right-0 !z-50   lg:block bg-[#456a94] text-white w-20 text-center px-0 py-6 fixed">
-    <ul class="menu flex flex-col  items-center justify-center gap-y-2 font-bold !w-[100%]">
+    <ul class="menu flex flex-col  items-center justify-evenly h-[100%]  font-bold !w-[100%]">
       <li
         v-for="item in menuItems"
         :key="item.title"
@@ -10,7 +10,7 @@
           <!-- Main Link -->
           <NuxtLink
             :to="item.route || ''"
-            :disabled="!item.route"
+            :disabled="item.route"
             class="flex  justify-center flex-col  items-center hover:bg-[#d9d9d921]"
             :class="{ 'bg-[#d9d9d921]': isActive(item.route) }"
           >
@@ -46,7 +46,7 @@
           </ul>
         </div>
       </li>
-      <!-- ///////////////////////////////////////////////// -->
+    
 
       <div @click="toggleDropdown('menu')">
           <img src="@/assets/icons/sidebar/Slide Down.png"/>
@@ -128,24 +128,16 @@ import DollarCoin from '../assets/icons/sidebar/Dollar Coin.png';
 
 // Menu items, with dropdown submenus for specific items
 const menuItems = ref([
-  { title: "لوحه استلام", route: null ,icon: ControlPanel ,route:'/laboratorySection/setting1'},
-  { title: "قسم البوابه", route:null , icon: FrontGateOpen ,route:'/laboratorySection/setting2' },
+  { title: "لوحه استلام", route: null ,icon: ControlPanel },
+  { title: "قسم البوابه", route:null , icon: FrontGateOpen  },
   {title: "ميزان البسكول", route:null, icon: Scales,},
   { title: " المعمل", route: null, icon: OpticalMicroscope ,
   children: [
-<<<<<<< HEAD
   { title: "انشاء تقارير", route: "/warhouses/lap/createreport" },
         { title: "المعمل 1", route: "/warhouses/lap/lapWarhouse" },
         { title: "المعمل 2", route: "/warhouses/lap/lapWarhouse2" },
         { title: "المعمل 4", route: "/warhouses/lap/lapWarhouse3" },
         { title: "المعمل 5", route: "/warhouses/lap/lapWarhouse4" },
-=======
-  { title: "انشاء تقارير", route: "/labSection/createReport" },
-        { title: "المعمل 1", route: "/labSection/lab1" },
-        { title: "المعمل 2", route: "/labSection/lab2" },
-        { title: "المعمل 4", route: "/labSection/lab3" },
-        { title: "المعمل 5", route: "/labSection/lab4" },
->>>>>>> origin/feature3
     ],
    },
   { title: " المخازن", route: null, icon: Package ,
